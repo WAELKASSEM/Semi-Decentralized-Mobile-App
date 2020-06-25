@@ -256,7 +256,7 @@ For the WEB API and Mobile Application Development we will be using [VISUAL STUD
 
 ## Architecture - Global Scope:
 
-![Architecture-Global Scope](Images/Architecture Overview.jpg)
+<img src="Images/Architecture Overview.jpg" alt="Architecture-Global Scope" style="zoom:105%;" />
 
 
 
@@ -417,7 +417,7 @@ The **updatePatient** function clears the data of the patient's status struct. *
 
 1. Open Chrome and make sure to have the Rinkeby Test Network selected.
 
-   ![](Images/Test Networks.PNG)
+   <img src="Images/Test Networks.PNG" style="zoom:100%;" />
 
    
 
@@ -439,7 +439,7 @@ The **updatePatient** function clears the data of the patient's status struct. *
 
    
 
-   ![](Images/Connection Request.jpg)
+   <img src="Images/Connection Request.jpg" style="zoom:100%;" />
 
    
 
@@ -652,7 +652,7 @@ Now we just add the [ApiKeyAuth] attribute code to every controller.
 
 4. Select to debug using **KESTREL** and click run.
 
-   ![](Images/Kestrel Selection.jpg)
+   <img src="Images/Kestrel Selection.jpg" style="zoom:100%;" />
 
 ##  Mobile Application Programming
 
@@ -810,7 +810,7 @@ Contains two CSharp files :
 
   In the Ethereum folder you'll notice a folder for each smart contract used in our application.
 
-  ![](Images/Smart Contracts C%23 structure.PNG)
+  <img src="Images/Smart Contracts C%23 structure.PNG" style="zoom:120%;" />
 
   
 
@@ -865,7 +865,7 @@ Contains two CSharp files :
 
 Briefly, in Xamarin shell a freshly introduced UI cross platform layout . It's main aspect is that each flyout item opens a content page, similarly to master detail but the code is a lot more organized, maintainable and easier to write. It also has many more important features to be discussed later.
 
-![](Images/Shell.png)
+<img src="Images/Shell.png" style="zoom:100%;" />
 
 
 
@@ -911,7 +911,7 @@ Adds the fonts and colors found in the themes to the Application's resource dict
 
 - **Screenshot:**
 
-  <img src="Images/Login View.png" style="zoom:35%" />
+  <img src="Images/Login View.png" style="zoom:50%" />
 
   
 
