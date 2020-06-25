@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.PrescriptionsView"
+             Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                         Command="{Binding RefreshCommand}">
+                <CollectionView x:Name="collection" 
+                            ItemsSource="{Binding Prescriptions}" 
+                            Margin="10">
+                    <CollectionView.EmptyView>
+                        <StackLayout VerticalOptions="End">
+                            <Label     Text="Add Empty View Template Here"
+                                       FontSize="Title"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="10,5,10,0">
+                                <border:SfBorder BorderColor="{StaticResource BlueSapphire}"
+                                                 CornerRadius="40" 
+                                                 HasShadow="True">
+                                    <StackLayout Padding="10">
+                                        <Label  Text="{Binding MedicineName}"
+                                                FontSize="24"
+                                                FontAttributes="Bold"
+                                                TextColor="{StaticResource MetallicSeaweed}"></Label>
+                                        <BoxView Color="{StaticResource Gray-600}"
+                                                 HeightRequest="2"
+                                                 HorizontalOptions="Fill"></BoxView>
+                                        <Label FontSize="18">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource PersianGreen}"
+                                                          FontAttributes="Bold"
+                                                          Text="Med Code: "></Span>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource Gray-700}"
+                                                          FontAttributes="Italic"
+                                                          Text="{Binding MedicineCode}"
+                                                          x:Name="code"
+                                                          ></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label FontSize="18">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource PersianGreen}"
+                                                          FontAttributes="Bold"
+                                                          Text="Doctor: "></Span>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource Gray-700}"
+                                                          FontAttributes="Italic"
+                                                          Text="{Binding DoctorName}"></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label FontSize="Medium">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource PersianGreen}"
+                                                          FontAttributes="Bold"
+                                                          Text="Prescribed On: "></Span>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource Gray-700}"
+                                                          FontAttributes="Italic"
+                                                          Text="{Binding Date,StringFormat='{0:d MMMM yyyy}'}"></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label FontSize="Medium">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="Medium"
+                                                            TextColor="{StaticResource PersianGreen}"
+                                                            FontAttributes="Bold"
+                                                            Text="Comments: "></Span>
+                                                    <Span FontSize="Medium"
+                                                          TextColor="{StaticResource Gray-700}"
+                                                          FontAttributes="Italic"
+                                                          Text="{Binding Comment}"></Span>
+
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <buttons:SfButton HorizontalOptions="End"
+                                                          Text="Buy"
+                                                          Command="{Binding BuyCommand}"
+                                                          CommandParameter="{Binding .}"
+                                                          Style="{StaticResource SfButtonStyle}"
+                                                          WidthRequest="80"
+                                                          HeightRequest="40"></buttons:SfButton>
+                                    </StackLayout>
+                                </border:SfBorder>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </RefreshView>
+            <!--<ContentView x:Name="floatingButtonParent" 
+                         AbsoluteLayout.LayoutBounds="0.93,0.97,0.14,0.07"
+                         AbsoluteLayout.LayoutFlags="All">
+            <androidWidget:FloatingActionButton
+                x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
+                Click="stuff"
+                  />
+            </ContentView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

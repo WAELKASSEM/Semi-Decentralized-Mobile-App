@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.DoctorsView"
+             Style="{StaticResource ContentPageStyle}"
+             Shell.NavBarIsVisible="True"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Command="{Binding ShowAddMenuCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10"
+                     AbsoluteLayout.LayoutFlags="All"
+				    AbsoluteLayout.LayoutBounds="0,0,1,1">
+            
+            <border:SfBorder CornerRadius="30"
+                   BorderColor="{StaticResource BlueSapphire}"
+                   IsVisible="{Binding AddMenuVisibility}"
+                   >
+                <StackLayout>
+                    <Label Style="{StaticResource LabelStyle}"
+                           FontSize="28"
+                           Margin="10,10,0,0"
+                           TextColor="{StaticResource MetallicSeaweed}"
+                   >Add Doctor</Label>
+                    <Entry Style="{StaticResource DoctorsViewEntryStyle}"
+                           Placeholder="Address"
+                           Text="{Binding Address}"
+                           ></Entry>
+                    <Entry Style="{StaticResource DoctorsViewEntryStyle}"
+                           Placeholder="Name"
+                           Text="{Binding Name}"></Entry>
+                    <buttons:SfButton Text="ADD"
+                            Style="{StaticResource SfButtonStyle}"
+                    CornerRadius="30"
+                     HeightRequest="40"
+                     WidthRequest="100"
+                    Margin="0,10,10,10"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HorizontalOptions="End"
+                    Command="{Binding AddContactCommand }"></buttons:SfButton>
+                </StackLayout>
+            </border:SfBorder>
+
+            <!-- Title Label -->
+            <Label      FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Start"
+                        Style="{StaticResource LabelStyle}"
+                        Text="My Doctors"
+                        TextColor="{StaticResource Gray-900}" />
+            
+            <!-- Note Label-->
+            <Label
+                        Margin="0,16"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="12"
+                        HorizontalOptions="Start"
+                        Text="Pull down to refresh. (Paid Transaction)."
+                        TextColor="{StaticResource Gray-800}">
+            </Label>
+            
+            
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                         Command="{Binding RefreshCommand}">
+                <CollectionView VerticalScrollBarVisibility="Always"
+                            SelectionMode="None"
+                            ItemsSource="{Binding Contacts}"
+                               >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        
+                        
+                        <DataTemplate>
+                            <border:SfBorder 
+                                BackgroundColor="{StaticResource PaleSpringBud}"
+                                Style="{StaticResource FormBorderStyle}"
+                                BorderColor="{StaticResource MountainMeadow}"
+                                BorderWidth="3"
+                            >
+                                <StackLayout>
+                                    <Label FontFamily="{StaticResource Montserrat-SemiBold}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Start"
+                                           Style="{StaticResource LabelStyle}"
+                                           TextColor="{StaticResource MetallicSeaweed}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="Dr. "></Span>
+                                                    <Span Text="{Binding Name}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label FontFamily="{StaticResource Montserrat-Medium}"
+                                           TextColor="{StaticResource BlueSapphire}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="{Binding Address}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Style="{StaticResource LabelStyle}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="{Binding Status}" 
+                                                          FontFamily="{StaticResource Montserrat-Regular}"
+                                                          FontSize="12"
+                                                          TextColor="{StaticResource MetallicSeaweed}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </border:SfBorder>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

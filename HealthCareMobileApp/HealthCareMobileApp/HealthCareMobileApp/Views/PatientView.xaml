@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.PatientView"
+             Style="{StaticResource ContentPageStyle}"
+            
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Always"
+                    Margin="5,10,5,0">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <border:SfBorder CornerRadius="30"
+                                     BorderColor="{StaticResource BlueSapphire}"
+                                     HorizontalOptions="FillAndExpand"
+                                     Style="{StaticResource SfBorderStyle}">
+                        <Label TextColor="{StaticResource Gray-700}" 
+                               FontSize="14"
+                               FontFamily="{StaticResource Montserrat-Medium}"
+                               Text="{Binding Address} "
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center">
+                        </Label>
+                    </border:SfBorder>
+
+                    <border:SfBorder CornerRadius="80"
+                           BorderColor="{StaticResource BlueSapphire}">
+                        <Entry IsEnabled="True"
+                           Placeholder="BT"
+                           TextColor="{StaticResource Red}"
+                           PlaceholderColor="{StaticResource Red}"
+                           Text="{Binding BloodType,Mode=TwoWay}"></Entry>
+                    </border:SfBorder>
+                </StackLayout>
+                <border:SfBorder Style="{StaticResource PatientViewBorderStyle}">
+                    <StackLayout>
+                        <Label Text="Emergency Contacts:" 
+                        Style="{StaticResource PatientViewLabelStyle}"
+                       ></Label>
+                        <BoxView Style="{StaticResource PatientViewBoxViewStyle}"></BoxView>
+                        <CollectionView x:Name="emergencyContactsCollectionView"
+                                        Style="{StaticResource PatientViewCollectionViewStyle}"
+                                        ItemsSource="{Binding EmergencyContacts}"
+                                        SelectionChangedCommand="{Binding DeleteEmergencyContactCommand}"
+                                        SelectionChangedCommandParameter="{x:Reference emergencyContactsCollectionView }">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Style="{StaticResource PatientViewLabelDataTemplateStyle}"
+                                           Text="{Binding}"
+                                           ></Label>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <buttons:SfButton
+                            Style="{StaticResource SfButtonStyle}"
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            HorizontalOptions="End"
+                            BackgroundColor="{StaticResource BlueSapphire}"
+                            CornerRadius="30"
+                            Margin="5,5,10,5"
+                            HorizontalTextAlignment="Center"
+                            Text="+"
+                            FontSize="18"
+                            Command="{Binding AddCommand}"
+                            ></buttons:SfButton>
+                    </StackLayout>
+                </border:SfBorder>
+                <border:SfBorder Style="{StaticResource PatientViewBorderStyle}">
+                    <StackLayout>
+                        <Label Style="{StaticResource  PatientViewLabelStyle}"
+                            Text="Medical Notes:" 
+                       ></Label>
+                        <BoxView Style="{StaticResource PatientViewBoxViewStyle}"></BoxView>
+                        <CollectionView x:Name="medicalNotesCollectionView"
+                                Style="{StaticResource PatientViewCollectionViewStyle}"
+                                ItemsSource="{Binding MedicalNotes}"
+                                >
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Text="{Binding}"
+                                           Style="{StaticResource PatientViewLabelDataTemplateStyle}"></Label>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </border:SfBorder>
+                <border:SfBorder Style="{StaticResource  PatientViewBorderStyle}">
+                    <StackLayout>
+                        <Label Text="Allergies:" 
+                       Style="{StaticResource  PatientViewLabelStyle}">
+                        </Label>
+                        <BoxView Style="{StaticResource  PatientViewBoxViewStyle}"></BoxView>
+                        <CollectionView 
+                                ItemsSource="{Binding Allergies}"
+                                Style="{StaticResource PatientViewCollectionViewStyle}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Text="{Binding}"
+                                           Style="{StaticResource PatientViewLabelDataTemplateStyle}"></Label>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </border:SfBorder>
+                <buttons:SfButton 
+                    Style="{StaticResource SfButtonStyle}"
+                    Text="Submit Changes"
+                    Margin="10,10,10,10"
+                    Command="{Binding UpdateCommand}"></buttons:SfButton>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

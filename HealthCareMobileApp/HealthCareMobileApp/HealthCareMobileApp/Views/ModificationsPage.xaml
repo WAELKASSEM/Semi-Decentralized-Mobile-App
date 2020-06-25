@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border ="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.ModificationsPage"
+             Style="{StaticResource ContentPageStyle}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+                <StackLayout>
+            <RefreshView Command="{Binding GetCommand}"
+                         IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView x:Name="ModificationsCollectionView"
+                                VerticalOptions="Start"
+                                VerticalScrollBarVisibility="Always"
+                                Margin="15"
+                                ItemsSource="{Binding Modifications}"
+                                SelectionMode="Single"
+                               
+                                SelectionChangedCommand="{Binding AcceptModificationCommand}"
+                                SelectionChangedCommandParameter="{x:Reference ModificationsCollectionView}"
+                                >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <border:SfBorder CornerRadius="30"
+                                   BorderColor="{StaticResource BlueSapphire}"
+                                   HasShadow="True"
+                                   Margin="10"
+                               >
+                                <StackLayout Padding="10">
+                                    <Label Style="{StaticResource LabelStyle}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="{Binding DoctorName}" TextColor="{StaticResource PersianGreen}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource LabelStyle}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="{Binding Type}" TextColor="{StaticResource MetallicSeaweed}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource LabelStyle}"
+                                        FontSize="Large">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="{Binding Data}" TextColor="{StaticResource MountainMeadow}"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </border:SfBorder>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

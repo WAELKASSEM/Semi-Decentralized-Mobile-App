@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthCareMobileApp.Views.AppShell"
+             xmlns:views="clr-namespace:HealthCareMobileApp.Views"
+             FlyoutBackgroundColor="{StaticResource MountainMeadow}"             
+        >
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image 
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       FontFamily="{StaticResource Montserrat-Medium}"
+                       TextColor="{StaticResource Gray-900}"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource BlueSapphire}"
+              MinimumHeightRequest="50"
+              HeightRequest="70">
+            <Label Text="DHealthCare"
+                   FontFamily="{StaticResource Montserrat-Bold}"
+                   FontSize="20"
+                   TextColor="{StaticResource Gray-100}"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="End"
+               Padding="10,0,0,10"    />
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="My Doctors"
+                Route="my_doctors"
+                >
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:DoctorsView}">
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Prescriptions" Route="prescriptions">
+        
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:PrescriptionsView}">
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Medical Record"
+                Route="record">
+        <Tab>
+
+            <ShellContent Route="file" ContentTemplate="{DataTemplate views:PatientView}" Title="My File">
+            </ShellContent>
+            <ShellContent Route="modifications" ContentTemplate="{DataTemplate views:ModificationsPage}" Title="Modifications"></ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="My Patients" 
+                Route="my_patients" 
+                >
+        <Tab >
+            <ShellContent Route="accepted" 
+                          Title="My Patients" ContentTemplate="{DataTemplate views:PatientsView}"
+                          ></ShellContent>
+            <ShellContent Route="pending"
+                          Title="Pending" ContentTemplate="{DataTemplate views:PendingRequests}"></ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Write Prescription"
+                Route="drugs">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:Drugs}">
+                
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+</Shell>

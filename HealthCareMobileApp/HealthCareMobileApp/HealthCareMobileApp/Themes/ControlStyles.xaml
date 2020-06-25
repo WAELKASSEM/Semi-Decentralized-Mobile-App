@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                    xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+                    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+                    xmlns:control="clr-namespace:HealthCareMobileApp.Controls"
+                    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                    x:Class="HealthCareMobileApp.Themes.ControlStyles">
+
+
+
+    <!-- Common style for separators-->
+    <Style x:Key="SeparatorStyle" TargetType="BoxView">
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueSapphire}" />
+    </Style>
+    
+    <!--Common Style For ContentPage-->
+    <Style TargetType="ContentPage" x:Key="ContentPageStyle">
+        <Setter Property="Shell.NavBarIsVisible" Value="False" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PersianGreen}"></Setter>
+        <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource PersianGreen}"></Setter>
+        <Setter Property="BackgroundColor" Value="{StaticResource PaleSpringBud}" />
+
+    </Style>
+    
+    <!--  Common style for labels  -->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Gray-White}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="LineHeight" Value="1.25" />
+    </Style>
+
+    <!--  Common styles for borders  -->
+    <Style x:Key="SfBorderStyle" TargetType="border:SfBorder">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderBackgroundColor}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+
+    <Style x:Key="FormBorderStyle" TargetType="border:SfBorder">
+        <Setter Property="BorderColor" Value="{DynamicResource Gray-300}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="Margin" Value="0,8"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray-White}"/>
+    </Style>
+
+
+    <!--  Common styles for entries  -->
+    <Style x:Key="EntryStyle" TargetType="control:BorderlessEntry">
+        <Setter Property="PlaceholderColor" Value="{StaticResource EntryPlaceholderColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="15,0" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="ReturnType" Value="Done" />
+    </Style>
+
+    <Style x:Key="SearchEntryStyle" TargetType="control:BorderlessEntry">
+        <Setter Property="PlaceholderColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="ReturnType" Value="Done" />
+    </Style>
+
+
+
+    <!--  Common style for buttons  -->
+    <Style x:Key="SfButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundGradient">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush>
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0" Color="{StaticResource MountainMeadow}" />
+                        <graphics:SfGradientStop Offset="1" Color="{StaticResource MetallicSeaweed}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextColor" Value="{StaticResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <!--  Common style for Header Label  -->
+    <Style x:Key="RequestAddressHeaderLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-Medium}" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{StaticResource Gray-900}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Gray-White}" />
+        <Setter Property="LineHeight" Value="{OnPlatform Default=-1, Android=1.5}" />
+        <Setter Property="MaxLines" Value="2" />
+    </Style>
+
+
+
+    <!-- Style For Icon Buttons-->
+    <Style x:Key="IconButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Transparent}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="WidthRequest" Value="40" />
+    </Style>
+
+
+<!-- DoctorsView.xaml Control Styles -->
+    <Style x:Key="DoctorsViewEntryStyle" TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="{StaticResource MountainMeadow}"></Setter>
+        <Setter Property="Margin" Value="10,0,10,0"></Setter>
+    </Style>
+
+    <!-- PatientView.xaml Control Styles-->
+    <Style x:Key="PatientViewBorderStyle" TargetType="border:SfBorder">
+        <Setter Property="BorderColor" Value="{StaticResource BlueSapphire}"></Setter>
+        <Setter Property="CornerRadius" Value="30"></Setter>
+    </Style>
+    <Style x:Key="PatientViewLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Padding" Value="20,5,20,5"></Setter>
+        <Setter Property="TextColor" Value="{StaticResource MetallicSeaweed}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+    </Style>
+    <Style  x:Key="PatientViewBoxViewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueSapphire}"/>
+        <Setter Property="HeightRequest" Value="3" />
+    </Style>
+    <Style x:Key="PatientViewCollectionViewStyle" TargetType="CollectionView">
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Always" />
+        <Setter Property="Margin" Value="20,0,0,0" />
+        <Setter Property="SelectionMode" Value="Single" />
+        <Setter Property="HeightRequest" Value="100" />
+    </Style>
+    <Style x:Key="PatientViewLabelDataTemplateStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="TextColor" Value="{StaticResource BlueSapphire}" />
+    </Style>
+
+
+
+    <!-- NavigationBarButtonStyle-->
+    <Style x:Key="NavigationBarButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="{StaticResource Gray-600}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+    </Style>
+
+
+
+
+</ResourceDictionary>

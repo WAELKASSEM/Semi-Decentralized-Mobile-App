@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms" xmlns:control="clr-namespace:HealthCareMobileApp.Controls" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:combobox ="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:button ="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.Drugs"
+             Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../Themes/ControlStyles.xaml">
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <border:SfBorder
+                        Grid.Row="3"
+                        BackgroundColor="{StaticResource PaleSpringBud}"
+                        BorderColor="{StaticResource BlueSapphire}"
+                        Style="{StaticResource SfBorderStyle}"
+                    HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <control:BorderlessEntry
+                            Placeholder="Medicine Name"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            HorizontalOptions="FillAndExpand"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Query}"
+                            TextColor="{StaticResource BlueSapphire}" />
+
+                        <buttons:SfButton  x:Name="SearchButton" IsVisible="True"  Style="{StaticResource IconButtonStyle }"
+                                   Text="{StaticResource Search}"
+                                   Command="{Binding SearchCommand}"
+                                   />
+                    </StackLayout>
+                </border:SfBorder>
+                <border:SfBorder CornerRadius="30"
+                             BorderColor="{StaticResource BlueSapphire}"
+                             IsVisible="{Binding IsVisible}">
+                    <StackLayout Padding="10">
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           FontSize="24">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Name:  " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding BrandName}" TextColor="{StaticResource Gray-700}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           FontSize="20">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Code:  " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding Code}" TextColor="{StaticResource Gray-700}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           FontSize="22">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Strength:  " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding Strength}" TextColor="{StaticResource Gray-700}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           FontSize="18">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Presentation:  " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding Presentation}" TextColor="{StaticResource Gray-700}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           FontSize="20">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Form:  " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding Form}" TextColor="{StaticResource Gray-700}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           TextColor="{StaticResource PersianGreen}"
+                           FontSize="20"
+                           >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Price: " TextColor="{StaticResource BlueSapphire}"></Span>
+                                        <Span Text="{Binding Price}"></Span>
+                                        <Span Text=" Eth"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label FontFamily="{StaticResource Montserrat-Medium}"
+                           TextColor="{StaticResource BlueSapphire}"
+                           Margin="0,15,0,0"
+                           FontSize="20"
+                           Text="Patient:">
+                        </Label>
+                        <combobox:SfComboBox IsEditableMode="True"
+                                         TextColor="{StaticResource BlueSapphire}"
+                                         ClearButtonColor="{StaticResource PersianGreen}"
+                                         DataSource="{Binding MyPatients}"
+                                         Margin="10,0,10,0"
+                                         NoResultsFoundText="Contact Not Found"
+                                         HighlightedTextColor="{StaticResource PersianGreen}"
+                                         x:Name="MyContacts"
+                                         >
+                            <combobox:SfComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Label FontFamily="{StaticResource Montserrat-SemiBold}" FontSize="14" Text="{Binding Name}"></Label>
+                                        <Label FontFamily="{StaticResource Montserrat-Regular}" FontSize="10" Text="{Binding Address}" TextColor="{StaticResource Gray-400}"></Label>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </combobox:SfComboBox.ItemTemplate>
+                        </combobox:SfComboBox>
+                        <Entry
+                            Margin="5,10,5,0"
+                            Placeholder="Comments"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            HorizontalOptions="FillAndExpand"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Comment}"
+                            TextColor="{StaticResource BlueSapphire}" />
+                        <button:SfButton Style="{StaticResource SfButtonStyle}"
+                                     Text="Prescribe"
+                                     Command="{Binding PrescribeCommand}"
+                                     CommandParameter="{x:Reference MyContacts}"></button:SfButton>
+                    </StackLayout>
+                </border:SfBorder>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

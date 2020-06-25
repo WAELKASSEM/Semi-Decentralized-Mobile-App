@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.PendingRequests"
+             Style="{StaticResource ContentPageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <buttons:SfButton HorizontalOptions="End"
+                              Style="{StaticResource SfButtonStyle}"
+                              Text="GET"
+                              HeightRequest="40"
+                              WidthRequest="60"
+                              Command="{Binding GetCommand}"
+                              >
+                
+            </buttons:SfButton>
+            <RefreshView Command="{Binding GetCommand}"
+                         IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding Requests}"
+                           >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <border:SfBorder Style="{StaticResource FormBorderStyle}"
+                                             BorderColor="{StaticResource BlueSapphire}"
+                                             BackgroundColor="{StaticResource PaleSpringBud}">
+                                    <syncfusion:SfExpander BackgroundColor="{StaticResource PaleSpringBud}">
+                                        <syncfusion:SfExpander.Header>
+                                            <Label Text="{Binding Address}" Style="{StaticResource RequestAddressHeaderLabelStyle}"></Label>
+                                        </syncfusion:SfExpander.Header>
+                                        <syncfusion:SfExpander.Content>
+                                            <StackLayout>
+                                                <Entry Style="{StaticResource EntryStyle}"
+                                               PlaceholderColor="{StaticResource PersianGreen}"
+                                               Placeholder="Set Name"
+                                               Text="{Binding Name}"        
+                                               TextColor="{StaticResource BlueSapphire}">
+                                                </Entry>
+                                                <StackLayout Orientation="Horizontal"
+                                                     HorizontalOptions="End">
+                                                    <buttons:SfButton CornerRadius="40" 
+                                                    Text="Reject" 
+                                                    BackgroundColor="{StaticResource Red}"
+                                                                  FontFamily="{StaticResource Montserrat-SemiBold}"
+                                                              Command="{Binding RejectCommand}"
+                                                              CommandParameter="{Binding .}"
+                                                                  ></buttons:SfButton>
+                                                    <buttons:SfButton Text="ADD" 
+                                                              CornerRadius="40"
+                                                              Style="{StaticResource SfButtonStyle}"
+                                                              HorizontalOptions="End"
+                                                              Command="{Binding AddCommand}"
+                                                              CommandParameter="{Binding .}"></buttons:SfButton>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </syncfusion:SfExpander.Content>
+                                    </syncfusion:SfExpander>
+                                </border:SfBorder>
+                                <BoxView Style="{StaticResource SeparatorStyle}"></BoxView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

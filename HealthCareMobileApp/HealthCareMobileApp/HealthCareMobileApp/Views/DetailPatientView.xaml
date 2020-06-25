@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+             xmlns:p="clr-namespace:HealthCareMobileApp.Views"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.DetailPatientView"
+             Shell.PresentationMode="ModalAnimated"
+             BackgroundColor="{StaticResource PaleSpringBud}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ControlStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <!--  Header image  -->
+                <StackLayout Margin="5,10,5,10">
+                    <StackLayout Orientation="Horizontal">
+                        <border:SfBorder CornerRadius="30"
+                                     BorderColor="{StaticResource BlueSapphire}"
+                                     HorizontalOptions="FillAndExpand"
+                                     Style="{StaticResource SfBorderStyle}">
+                            <Label TextColor="{StaticResource Gray-700}" 
+                               FontSize="14"
+                               FontFamily="{StaticResource Montserrat-Medium}"
+                               Text="{Binding Address} "
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center">
+                            </Label>
+                        </border:SfBorder>
+
+                        <border:SfBorder CornerRadius="80"
+                           BorderColor="{StaticResource BlueSapphire}">
+                            <Entry IsEnabled="False"
+                           Placeholder="BT"
+                           TextColor="{StaticResource Red}"
+                           PlaceholderColor="{StaticResource Red}"
+                           Text="{Binding BloodType}"></Entry>
+                        </border:SfBorder>
+                    </StackLayout>
+                    <border:SfBorder BorderColor="{StaticResource BlueSapphire}"
+                       CornerRadius="30">
+                        <StackLayout>
+                            <Label Text="Emergency Contacts:" 
+                       FontSize="20"
+                       Padding="20,5,20,5"
+                       TextColor="{StaticResource MetallicSeaweed}"
+                       FontFamily="{StaticResource Montserrat-SemiBold}"
+                       ></Label>
+                            <BoxView BackgroundColor="{StaticResource BlueSapphire}"
+                         HeightRequest="3"></BoxView>
+                            <CollectionView x:Name="emergencyContactsCollectionView"
+                                VerticalOptions="Start"
+                                VerticalScrollBarVisibility="Always"
+                                Margin="20,0,0,0"
+                                ItemsSource="{Binding EmergencyContacts}"
+                                HeightRequest="100">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label FontSize="17"
+                                           Text="{Binding}"
+                                           TextColor="{StaticResource BlueSapphire}"></Label>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </border:SfBorder>
+                    <border:SfBorder BorderColor="{StaticResource BlueSapphire}"  CornerRadius="30">
+                        <StackLayout>
+                            <Label Text="Medical Notes:" 
+                               FontSize="20"
+                               Padding="20,5,20,5"
+                               FontFamily="{StaticResource Montserrat-SemiBold}"
+                               TextColor="{StaticResource MetallicSeaweed}"
+                       ></Label>
+                            <BoxView HeightRequest="3" Color="{StaticResource BlueSapphire}"></BoxView>
+                            <CollectionView x:Name="medicalNotesCollectionView"
+                                VerticalOptions="Start"
+                                VerticalScrollBarVisibility="Always"
+                                Margin="20,0,0,0"
+                                ItemsSource="{Binding MedicalNotes}"
+                                HeightRequest="100">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label FontSize="17"
+                                           Text="{Binding}"
+                                           TextColor="{StaticResource BlueSapphire}"></Label>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </border:SfBorder>
+                    <border:SfBorder BorderColor="{StaticResource BlueSapphire}" CornerRadius="30" Margin="0,0,0,51">
+                        <StackLayout>
+                            <Label Text="Allergies:" 
+                       FontSize="Title"
+                       Margin="20,0,0,0"
+                               TextColor="{StaticResource MetallicSeaweed}"
+                               FontFamily="{StaticResource Montserrat-SemiBold}">
+                            </Label>
+                            <BoxView HeightRequest="3" BackgroundColor="{StaticResource BlueSapphire}"></BoxView>
+                            <CollectionView 
+                                VerticalOptions="Start"
+                                VerticalScrollBarVisibility="Always"
+                                Margin="20,0,0,0"
+                                ItemsSource="{Binding Allergies}"
+                                HeightRequest="100">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label FontSize="17"
+                                           Text="{Binding}"
+                                           TextColor="{StaticResource BlueSapphire}"></Label>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </border:SfBorder>
+                </StackLayout>
+                <!--  OverLay Effect  -->
+                <border:SfBorder Margin="0,-51,0,0" CornerRadius="10,10,0,0" BackgroundColor="{StaticResource PersianGreen}"
+                                 BorderWidth="0" Padding="16" Grid.Row="1"
+                                 >
+                    <StackLayout Margin="0" Padding="0" Orientation="Vertical" Spacing="0" Grid.Row="1" IsVisible="True">
+
+                        <Label  HorizontalOptions="Start"
+                                VerticalOptions="Center" 
+                                Text="Modify" 
+                                FontSize="20" 
+                                FontFamily="{DynamicResource Montserrat-Bold}" TextColor="{DynamicResource Gray-900}"
+                                LineHeight="{OnPlatform Default=-1,Android=1.25}"/>
+                        <combobox:SfComboBox HeightRequest="40"
+                                             Margin="5,10,0,0"
+                                             x:Name="ModificationTypeComboBox"
+                                             BackgroundColor="{StaticResource PersianGreen}"
+                                             DropDownBackgroundColor="{StaticResource PaleSpringBud}"
+                                             FontFamily="{StaticResource Montserrat-SemiBold}"
+                                             TextColor="{StaticResource Gray-900}">
+                            <combobox:SfComboBox.ComboBoxSource>
+                                <ListCollection:List x:TypeArguments="x:String">
+                                    <x:String>MedicalNotes</x:String>
+                                    <x:String>Allergies</x:String>
+                                </ListCollection:List>
+                            </combobox:SfComboBox.ComboBoxSource>
+                            
+                        </combobox:SfComboBox>
+                        
+                        <Entry     Margin="5,20,0,0"
+                                   Text="{Binding ModificationData}"
+                                   FontSize="Large" 
+                                   Placeholder="Enter Comment Here"
+                                   FontFamily="{StaticResource Montserrat-Medium}" 
+                                   HorizontalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Start" TextColor="{StaticResource Gray-900}"/>
+                        <buttons:SfButton Text="Submit"
+                                          Margin="0,8,0,0"
+                                          Style="{StaticResource SfButtonStyle}"
+                                          Command="{Binding SubmitCommand}"
+                                          CommandParameter="{x:Reference ModificationTypeComboBox}"
+                                          BackgroundColor="{StaticResource BlueSapphire}"
+                                          WidthRequest="80"
+                                          HorizontalOptions="End"
+                                          ></buttons:SfButton>
+                    </StackLayout>
+                </border:SfBorder>
+
+
+                
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

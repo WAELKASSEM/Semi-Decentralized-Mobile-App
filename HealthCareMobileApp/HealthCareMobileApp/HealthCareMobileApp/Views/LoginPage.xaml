@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:control="clr-namespace:HealthCareMobileApp.Controls" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="HealthCareMobileApp.Views.LoginPage"
+             Shell.PresentationMode="Animated"
+             Style="{StaticResource ContentPageStyle}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary Source="../Themes/ControlStyles.xaml">
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ScrollView VerticalScrollBarVisibility="Always"
+                    HorizontalOptions="Center">
+            <ScrollView.VerticalOptions>
+                <OnIdiom
+                    x:TypeArguments="LayoutOptions"
+                    Default="CenterAndExpand"
+                    Phone="FillAndExpand" />
+            </ScrollView.VerticalOptions>
+            <StackLayout Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                             PhoneLandscape='150,32',
+                                                             TabletPortrait='200,50',
+                                                             TabletLandscape='300,50',
+                                                             Desktop='30'}"
+                Spacing="0"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="{OnPlatform Default='-1',
+                                          UWP='350'}"
+                
+                >
+                <Grid RowSpacing="0" VerticalOptions="CenterAndExpand">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <!--  Label to display the title of this page  -->
+                    <Label
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Log In"
+                        TextColor="{StaticResource Gray-900}" />
+
+                    <!--  Label to display the description of this page  -->
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,8"
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Enter Wallet Information."
+                        TextColor="{StaticResource Gray-800}" />
+
+
+                    <!-- Address Region-->
+                    <StackLayout Grid.Row="2" Padding="0,24">
+                        <border:SfBorder
+                        Grid.Row="3"
+                        BackgroundColor="{StaticResource PaleSpringBud}"
+                        BorderColor="{Binding AddressColor}"
+                        Style="{StaticResource SfBorderStyle}">
+                            <control:BorderlessEntry
+                            IsPassword="False"
+                            Placeholder="Address"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Address}"
+                            TextColor="{StaticResource Gray-900}" />
+                        </border:SfBorder>
+                        <Label
+                                Margin="15,-5,0,0"
+                                FontSize="12"
+                                IsVisible="{Binding AddressError}"
+                                Text="{Binding AddressErrorText}"
+                                TextColor="{StaticResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                    </StackLayout>
+                    <!-- Private Key -->
+                    <StackLayout Grid.Row="3" Padding="0,24">
+                        <border:SfBorder
+                        Grid.Row="3"
+                        BackgroundColor="{StaticResource PaleSpringBud}"
+                        BorderColor="{Binding PrivateKeyColor}"
+                        Style="{StaticResource SfBorderStyle}">
+                            <control:BorderlessEntry
+                            IsPassword="True"
+                            Placeholder="Address"
+                            PlaceholderColor="{StaticResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding PrivateKey}"
+                            TextColor="{StaticResource Gray-900}" />
+                        </border:SfBorder>
+                        <Label
+                                Margin="15,-5,0,0"
+                                FontSize="12"
+                                IsVisible="{Binding PrivateKeyError}"
+                                Text="{Binding PrivateKeyErrorText}"
+                                TextColor="{StaticResource Red}"
+                                VerticalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    
+                    <!--  Warning Label -->
+                    <Label
+                        Grid.Row="4"
+                        Margin="0,16"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="12"
+                        HorizontalOptions="Start"
+                        Text="Your Address is public. Your Private key is kept on your device."
+                        TextColor="{StaticResource Gray-800}">
+                    </Label>
+                    
+                    
+                    <!--  Login button  -->
+                    <buttons:SfButton
+                        Grid.Row="5"
+                        Margin="0,16"
+                        Command="{Binding VerifyCommand}"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="LOG IN" />
+                    
+                    <!--  Suggestion Label  -->
+                    <Label
+                        Grid.Row="6"
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Create a wallet using Metamask."
+                        TextColor="{StaticResource Gray-800}" />
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
