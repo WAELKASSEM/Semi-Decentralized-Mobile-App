@@ -82,7 +82,7 @@
                             Placeholder="Address"
                             PlaceholderColor="{StaticResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding Address}"
+                            Text="{Binding Address,Mode=TwoWay}"
                             TextColor="{StaticResource Gray-900}" />
                         </border:SfBorder>
                         <Label
@@ -101,11 +101,11 @@
                         BorderColor="{Binding PrivateKeyColor}"
                         Style="{StaticResource SfBorderStyle}">
                             <control:BorderlessEntry
-                            IsPassword="True"
-                            Placeholder="Address"
+                            IsPassword="False"
+                            Placeholder="PrivateKey"
                             PlaceholderColor="{StaticResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding PrivateKey}"
+                            Text="{Binding PrivateKey,Mode=TwoWay}"
                             TextColor="{StaticResource Gray-900}" />
                         </border:SfBorder>
                         <Label
@@ -117,7 +117,7 @@
                                 VerticalOptions="FillAndExpand" />
                     </StackLayout>
 
-                    
+
                     <!--  Warning Label -->
                     <Label
                         Grid.Row="4"
@@ -128,8 +128,8 @@
                         Text="Your Address is public. Your Private key is kept on your device."
                         TextColor="{StaticResource Gray-800}">
                     </Label>
-                    
-                    
+
+
                     <!--  Login button  -->
                     <buttons:SfButton
                         Grid.Row="5"
@@ -137,15 +137,32 @@
                         Command="{Binding VerifyCommand}"
                         Style="{StaticResource SfButtonStyle}"
                         Text="LOG IN" />
-                    
+
                     <!--  Suggestion Label  -->
                     <Label
                         Grid.Row="6"
                         FontFamily="{StaticResource Montserrat-Medium}"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Create a wallet using Metamask."
-                        TextColor="{StaticResource Gray-800}" />
+                        >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Create a wallet using "
+                                          TextColor="{StaticResource Gray-800}"></Span>
+                                    <Span Text="NETHEREUM."
+                                          TextDecorations="Underline"
+                                          TextColor="{StaticResource BlueSapphire}">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CreateCommand}">
+                                            </TapGestureRecognizer>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
 
                 </Grid>
             </StackLayout>

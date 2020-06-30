@@ -1,10 +1,6 @@
 ﻿using HealthCareMobileApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Android.Support.Design.Widget;
-using System.Collections.ObjectModel;
-using System;
-using System.Threading.Tasks;
 
 namespace HealthCareMobileApp.Views
 {

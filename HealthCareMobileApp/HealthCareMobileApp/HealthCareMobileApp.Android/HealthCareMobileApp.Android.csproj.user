@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>pixel_2_oreo_8_0_-_api_26</SelectedDevice>
+    <SelectedDevice>Sony D6502</SelectedDevice>
     <DefaultDevice>pixel_2_oreo_8_0_-_api_26</DefaultDevice>
     <AndroidDesignerPreferredDevice>pixel_3a_xl</AndroidDesignerPreferredDevice>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>

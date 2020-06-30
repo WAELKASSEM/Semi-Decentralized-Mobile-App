@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using HealthCareMobileApp.Ethereum.RelationshipManagerSmartContract;
 using HealthCareMobileApp.Contracts;
-using Android.Views.Animations;
 
 namespace HealthCareMobileApp.ViewModels.Navigation
 {

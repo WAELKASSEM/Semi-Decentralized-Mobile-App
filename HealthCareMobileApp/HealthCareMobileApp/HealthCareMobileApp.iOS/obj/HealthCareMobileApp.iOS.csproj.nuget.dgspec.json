@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj": {}
+    "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj": {
+    "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj",
         "projectName": "HealthCareMobileApp.iOS",
-        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj",
+        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\HealthCareMobileApp.iOS.csproj",
         "packagesPath": "C:\\Users\\WAEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\obj\\",
+        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
-                "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj"
+              "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
+                "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
+    "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
+        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
         "projectName": "HealthCareMobileApp",
-        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
+        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
         "packagesPath": "C:\\Users\\WAEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\obj\\",
+        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -1,12 +1,4 @@
-﻿using Android.Locations;
-using HealthCareMobileApp.ViewModels;
-using HealthCareMobileApp.ViewModels.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using HealthCareMobileApp.ViewModels.Navigation;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

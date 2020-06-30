@@ -12,6 +12,7 @@ namespace HealthCareMobileApp.ViewModels
         public LoginViewModel()
         {
             VerifyCommand = new Command(async () => await Verify());
+            CreateCommand = new Command(Generate);
             Errors[0] = "Address Length must be 42 characters";
             Errors[1] = "Private Key Length must be 64 characters";
             Errors[2] = "Address contains invalid Characters";
@@ -21,7 +22,7 @@ namespace HealthCareMobileApp.ViewModels
         }
 
         public Command VerifyCommand { get; }
-        public Command ExitCommand { get; }
+        public Command CreateCommand { get; }
         private readonly int AddressLength = 42;
         private readonly int PrivateKeyLength = 64;
         private readonly string[] Errors = new string[4];
@@ -94,5 +95,17 @@ namespace HealthCareMobileApp.ViewModels
             accountManager.SetActiveAccount(privateKey);
             await Shell.Current.GoToAsync("//my_doctors");
         }
+        public void Generate()
+        {
+            var acc = AccountManager.GenerateAccount();
+            Address = acc.Address;
+            PrivateKey = acc.PrivateKey.Substring(2).ToUpper();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Address)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PrivateKey)));
+
+
+
+        }
+
     }
 }

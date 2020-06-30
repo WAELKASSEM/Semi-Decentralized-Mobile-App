@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {}
+    "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
+    "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
+        "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
         "projectName": "HealthCareMobileApp",
-        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
+        "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj",
         "packagesPath": "C:\\Users\\WAEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\obj\\",
+        "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

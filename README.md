@@ -216,17 +216,17 @@ The most important properties of an Ethereum  Wallet are the **address** and the
 
 #### Keys Generation Process:
 
-***Note:** You can skip this paragraph if you don't want to learn about this process , it wouldn't affect the project in any way.*
+***Note:** You can skip this paragraph if you don't want to learn about this process, it wouldn't affect the project in any way.*
 
-The first step is to create a random private key  using SHA256, for example, using an open-source Ethereum library such as [EthereumJ](https://github.com/ethereum/ethereumj).
+The first step is to create a random private key using SHA256. 
 
 [SHA256](https://en.wikipedia.org/wiki/SHA-2) stands for secure hash algorithm.
 
-Private keys are generated as random 256 bits, which is 64 (hex) characters or 32 bytes.
+Private keys are generated as random 256 bits, which is 64 (hex) characters or 32 bytes. You must make sure that the random key generated is unique enough, do not generate it using numbers only because it will be prone to collision attacks. Luckily, Nethereum (the .Net Ethereum client) has a strong private keys generator. There are also other options like Metamask to create your private keys if you're not enough comfortable doing this yourself.  In this project, we will be using both Nethereum and Metamask for demonstration purposes. Also, Metmask is essential to deploy our smart contracts later.
 
-After the private key generation, Ethereum public keys of length 128 characters are created using an algorithm called Elliptic Curve Digital Signature Algorithm  (ECDSA). Ethereum uses [secp256k1](https://en.bitcoin.it/wiki/Secp256k1) to generate public keys. A public key is a point in this Elliptic curve algorithm.
+After the private key generation, Ethereum public keys of length 128 characters are created using an algorithm called Elliptic Curve Digital Signature Algorithm (ECDSA). Ethereum uses [secp256k1](https://en.bitcoin.it/wiki/Secp256k1) to generate public keys. A public key is a point in this Elliptic curve algorithm.
 
-To create an Ethereum Address, [keccak256](https://en.wikipedia.org/wiki/SHA-3) algorithm is applied to the coordinates of the public key.
+To create an Ethereum Address, [the keccak256](https://en.wikipedia.org/wiki/SHA-3) algorithm is applied to the coordinates of the public key.
 
 #### Creating The Ethereum Wallet:
 
@@ -969,6 +969,8 @@ Adds the fonts and colors found in the themes to the Application's resource dict
        }
   ```
 
+  
+
   #### The View Model:
 
   - **File Path:** /ViewModels/LoginViewModel.cs
@@ -1009,6 +1011,20 @@ Adds the fonts and colors found in the themes to the Application's resource dict
       {
           Command VerifyCommand = new Command(async () => await Verify());
       }
+      ```
+
+    - **The Create Command:**
+
+      This is a command that generates private keys for new users using Nethereum by calling the Generate Account function found in the Account Manager class.
+
+      ```c#
+      public static Account GenerateAccount()
+              {
+                  var ecKey = Nethereum.Signer.EthECKey.GenerateKey();
+                  var privateKey = ecKey.GetPrivateKeyAsBytes().ToHex();
+                  var account = new Account(privateKey);
+                  return account;
+              }
       ```
 
       

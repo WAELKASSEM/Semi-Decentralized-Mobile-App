@@ -8,6 +8,14 @@ namespace HealthCareMobileApp
     sealed class AccountManager
     {
         private static AccountManager accountManager = new AccountManager();
+        public static Account GenerateAccount()
+        {
+            var ecKey = Nethereum.Signer.EthECKey.GenerateKey();
+            var privateKey = ecKey.GetPrivateKeyAsBytes().ToHex();
+            var account = new Account(privateKey);
+            return account;
+        }
+
         public static AccountManager Instance() => accountManager;
         private Account ActiveAccount;
         public bool Verify(string address, string privateKey)

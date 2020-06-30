@@ -3627,11 +3627,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\HealthCareMobileApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\HealthCareMobileApp.Android.csproj",
       "projectName": "HealthCareMobileApp.Android",
-      "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\HealthCareMobileApp.Android.csproj",
+      "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\HealthCareMobileApp.Android.csproj",
       "packagesPath": "C:\\Users\\WAEL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\obj\\",
+      "outputPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3652,8 +3652,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
-              "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\SemiDecentralizedMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj"
+            "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj": {
+              "projectPath": "C:\\Users\\WAEL\\Documents\\GitHub\\Semi-Decentralized-Mobile-App\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp\\HealthCareMobileApp.csproj"
             }
           }
         }
